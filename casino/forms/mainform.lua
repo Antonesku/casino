@@ -443,7 +443,7 @@ function fillMainForm()
         addOneBtn.nameControl = "addOneBtn"
         addOneBtn.colorFrame = 0xF0FFFF
         addOneBtn.onClick = addOne
-        addOneBtn.colorBackground = 0x4682B4
+        addOneBtn.colorBackground = 0x483D8B
         addOneBtn.colorForeground = 0xFFFFFF
 
         addControl(panelCalculate, addOneBtn)
@@ -459,7 +459,7 @@ function fillMainForm()
         addTenBtn.colorFrame = addOneBtn.colorFrame
         addTenBtn.margin = {0,0,0,0}
         addTenBtn.onClick = addTen
-        addTenBtn.colorBackground = 0x4682B4
+        addTenBtn.colorBackground = addOneBtn.colorBackground
         addTenBtn.colorForeground = addOneBtn.colorForeground
 
         addControl(panelCalculate, addTenBtn)
@@ -475,7 +475,7 @@ function fillMainForm()
         addHundredBtn.colorFrame = addOneBtn.colorFrame
         addHundredBtn.margin = {0,0,0,1}
         addHundredBtn.onClick = addHundred
-        addHundredBtn.colorBackground = 0x4682B4
+        addHundredBtn.colorBackground = addOneBtn.colorBackground
         addHundredBtn.colorForeground = addOneBtn.colorForeground
         
 
@@ -492,7 +492,7 @@ function fillMainForm()
         minusOneBtn.colorFrame = addOneBtn.colorFrame
         minusOneBtn.margin = {0,0,0,2}
         minusOneBtn.onClick = minusOne
-        minusOneBtn.colorBackground = 0x4682B4
+        minusOneBtn.colorBackground = addOneBtn.colorBackground
         minusOneBtn.colorForeground = addOneBtn.colorForeground
         
 
@@ -509,7 +509,7 @@ function fillMainForm()
         minusTenBtn.colorFrame = addOneBtn.colorFrame
         minusTenBtn.margin = {0,0,0,1}
         minusTenBtn.onClick = minusTen
-        minusTenBtn.colorBackground = 0x4682B4
+        minusTenBtn.colorBackground = addOneBtn.colorBackground
         minusTenBtn.colorForeground = addOneBtn.colorForeground
 
         addControl(panelCalculate, minusTenBtn)
@@ -525,7 +525,7 @@ function fillMainForm()
         minusHundredBtn.colorFrame = addOneBtn.colorFrame
         minusHundredBtn.margin = {0,0,0,1}
         minusHundredBtn.onClick = minusHundred
-        minusHundredBtn.colorBackground = 0x4682B4
+        minusHundredBtn.colorBackground = addOneBtn.colorBackground
         minusHundredBtn.colorForeground = addOneBtn.colorForeground
 
         addControl(panelCalculate, minusHundredBtn)
@@ -1442,7 +1442,7 @@ function spin()
                 drawImage(slotsDiv.controls[columnNumber].controls[rowNumber], x + 1, y + 1)
             end
 
-            setSleep(1)
+            setSleep(0.5)
 
             for j = 1, #winLinesCoords[i] do
                 local columnNumber, rowNumber = winLinesCoords[i][j][1], winLinesCoords[i][j][2]
@@ -1552,8 +1552,7 @@ function outBalance()
         showResult("Успешно выведено!")
     end
 
-    setSleep(1)
-
+    setSleep(0.5)
 end
 
 --Расчет ставки
